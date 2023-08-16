@@ -35,7 +35,7 @@ app.get("/numbers", async (req, res) => {
   res.json({ numbers: sortedNumbers });
 });
 
-const providedUrls = [
+const givenUrls = [
   "http://20.244.56.144/numbers/primes",
   "http://20.244.56.144/numbers/fibo",
   "http://20.244.56.144/numbers/odd",
@@ -45,7 +45,7 @@ const providedUrls = [
 (async () => {
   try {
     const fetchResults = await Promise.all(
-      providedUrls.map(fetchNumbersFromUrl)
+      givenUrls.map(fetchNumbersFromUrl)
     );
     const mergedNumberSet = new Set();
 
